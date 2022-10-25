@@ -9,9 +9,11 @@ html {
 }
 
 .grid {
+  border: 1px solid red;
   display: grid;
   grid-template: 25vh 25vh 25vh / 25vw 25vw 25vw;
-  gap: 50px;
+  row-gap: 5vh;
+  column-gap: 5vh;
 }
 
 .grid > div {
