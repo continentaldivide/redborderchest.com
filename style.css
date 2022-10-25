@@ -1,0 +1,19 @@
+html {
+  background-color: darkolivegreen;
+  color: aliceblue;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template: 25vh 25vh 25vh / 25vw 25vw 25vw;
+  gap: 50px;
+}
+
+.grid > div {
+  border: 1px solid red;
+}
