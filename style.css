@@ -21,4 +21,15 @@ body {
 
 .grid > div {
   border: 1px solid red;
+  border-radius: 15%;
+  background-color: rgba(16, 51, 11, 0.6);
+}
+
+p {
+  color: blanchedalmond;
+  font-size: larger;
+  line-height: 1.5em;
+  text-align: center;
+  padding: 2vh 2vw;
+  word-spacing: 120%;
 }
