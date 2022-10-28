@@ -11,7 +11,7 @@ gridItems.forEach((item, i) => {
       // is <p>, this only turns the background of the p
       // element blue rather than the whole div
       let content = document.createElement("p");
-      content.textContent = `"${descriptions[i]}"`;
+      content.textContent = `${descriptions[i]}`;
       content.setAttribute("id", "box " + i + " text");
       gridItems[i].appendChild(content);
       states[i] = "description";
