@@ -6,7 +6,9 @@ gridItems.forEach((item, i) => {
     // not working quite as desired -- if hover target
     // is <p>, this only turns the background of the p
     // element blue rather than the whole div
-    e.target.innerText = `"${descriptions[i]}"`;
+    let content = document.createElement("p");
+    content.textContent = `"${descriptions[i]}"`;
+    gridItems[i].appendChild(content);
   });
 });
 
