@@ -1,37 +1,37 @@
-// const gridItems = document.querySelectorAll(".grid-item");
-
 const data = [
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
-  { symbol: "foo", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
+  { symbol: "./assets/rune-1.png", description: "bar", state: "symbol" },
 ];
 
-const gridItems = data.map((item) => {
+data.forEach((item) => {
   const newDiv = document.createElement("div");
-  const newP = document.createElement("p");
+  const newImg = document.createElement("img");
   newDiv.setAttribute("class", "grid-item");
-  newP.textContent = item.symbol;
+  newImg.setAttribute("src", item.symbol);
   document.querySelector(".grid").appendChild(newDiv);
-  newDiv.appendChild(newP);
-  return newDiv;
-});
-
-gridItems.forEach((item, i) => {
-  item.addEventListener("click", function (e) {
-    if (data[i].state == "symbol") {
-      item.style.background = "blue";
-      item.firstChild.textContent = `${data[i].description}`;
-      data[i].state = "description";
-    } else if (data[i].state == "description") {
-      item.style.background = "rgba(16, 51, 11, 0.6)";
-      item.firstChild.textContent = `${data[i].symbol}`;
-      data[i].state = "symbol";
+  newDiv.appendChild(newImg);
+  newDiv.addEventListener("click", function (e) {
+    if (item.state == "symbol") {
+      newDiv.firstChild.remove();
+      const newP = document.createElement("p");
+      newP.textContent = `${item.description}`;
+      newDiv.appendChild(newP);
+      newDiv.style.background = "blue";
+      item.state = "description";
+    } else if (item.state == "description") {
+      newDiv.firstChild.remove();
+      const newImg = document.createElement("img");
+      newImg.setAttribute("src", item.symbol);
+      newDiv.appendChild(newImg);
+      newDiv.style.background = "rgba(16, 51, 11, 0.6)";
+      item.state = "symbol";
     }
   });
 });
